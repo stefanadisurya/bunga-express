@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -70,4 +70,87 @@
         </div>
     </div>
 </div>
+@endsection --}}
+
+@extends('layouts.master')
+
+@section('title', 'Masuk — BungaExpress')
+
+@section('styles')
+<link href="{{ asset('css/main.css') }}" rel="stylesheet" media="all">
+<link href="{{ asset('css/login.css')}}" rel="stylesheet">
+@endsection
+
+@section('content')
+<main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+    <div class="container showcase-left">
+      <div class="card card-4">
+        <div class="row no-gutters">
+          <div class="col-md-5">
+            <img src="assets/image/login.jpg" alt="login" class="login-card-img">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <p class="title d-flex justify-content-center">Masuk</p>
+
+              <form method="POST" action="{{ route('login') }}">
+                @csrf
+
+                  <div class="row row-space">
+                    <div class="col-lg-12">
+                        <div class="input-group">
+                            <label for="email" class="label">Email</label>
+                            <input id="email" class="input--style-4 @error('email') is-invalid @enderror" type="text" name="email" value="{{ old('email') }}" required autofocus>
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row row-space">
+                    <div class="col-lg-12">
+                        <div class="input-group">
+                            <label for="password" class="label">Kata Sandi</label>
+                            <input id="password" class="input--style-4 @error('password') is-invalid @enderror" type="password" name="password" value="{{ old('password') }}" required>
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="custom-control custom-checkbox login-card-check-box">
+                    <input type="checkbox" class="custom-control-input" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                    <label for="remember" class="custom-control-label" for="customCheck1">Ingat saya</label>
+                  </div>
+                  
+                  <div class="p-t-15 d-flex justify-content-center">
+                    <button class="btn btn--radius-2 bg-dark" type="submit">Masuk</button>
+                  </div>
+                </form>
+                <div class="p-t-15 d-flex justify-content-center">
+                    <p>
+                        <a href="{{ route('password.request') }}">
+                           Lupa kata sandi?
+                        </a>
+                    </p>
+                </div>
+                <div class="p-t-15 d-flex justify-content-center">
+                    <p>Belum punya akun?
+                        <a href="{{ route('register') }}">
+                            Daftar
+                        </a>
+                    </p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
 @endsection
