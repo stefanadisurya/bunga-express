@@ -16,7 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::group(['middleware' => ['auth', 'roles:seller,member']], function () {
+    Route::get('/home', 'GlobalController@home')->name('home');
+    // Route::get('/transactions', 'GlobalController@show')->name('transactions');
+    // Route::get('/transactions/{header}', 'GlobalController@detailTransaction')->name('detailTransaction');
+});
+
 Route::get('/', 'GuestController@home')->name('root')->middleware('guest');
 Route::get('/products', 'GuestController@products')->name('products')->middleware('guest');
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');

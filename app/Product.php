@@ -12,7 +12,7 @@ class Product extends Model
     protected $table = 'products';
 
     protected $fillable = [
-        'name', 'price', 'description', 'image'
+        'name', 'price', 'user_id', 'description', 'image'
     ];
 
     // public function carts() {

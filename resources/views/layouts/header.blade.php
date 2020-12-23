@@ -77,23 +77,10 @@
                 <a class="nav-link text-light js-scroll-trigger mr-3" href="">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
-            </li>
-
-            @if (Route::has('register'))
-                <li class="nav-item">
-                    <a class="nav-link text-light js-scroll-trigger mr-3 ml-3" href="{{ route('register') }}">{{ __('Daftar') }}</a>
-                </li>
-            @endif
-
-            <li class="nav-item">
-                <a class="nav-link text-light js-scroll-trigger mr-3 ml-3" href="{{ route('login') }}">
-                    <i class="fas fa-sign-in-alt mr-2"></i>
-                    {{ __('Masuk') }}
-                </a>
-            </li>
+              </li>
   
               <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <a id="navbarDropdown" class="nav-link dropdown-toggle text-light ml-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                   @if(auth()->user()->image == null)
                     <img src="{{ asset('assets/image/default.jpg') }}" style="width: 25px; height: 25px; border-radius: 25px;" alt="">
                   @else
@@ -102,12 +89,45 @@
                 </a>
   
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item text-light" href="">
-                    Profile
+                  <a class="dropdown-item text-dark" href="">
+                    Profil
                   </a>
 
-                    <a class="dropdown-item text-light" href="">
-                        View Transaction History
+                    <a class="dropdown-item text-dark" href="">
+                      Daftar Transaksi
+                    </a>
+
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-danger" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                        <i class="fas fa-sign-out-alt mr-2"></i>
+                        {{ __('Logout') }}
+                    </a>
+  
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                    </form>
+                </div>
+              </li>
+            
+              @elseif(auth()->user()->role=="seller")
+              <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle text-light ml-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                  @if(auth()->user()->image == null)
+                    <img src="{{ asset('assets/image/default.jpg') }}" style="width: 25px; height: 25px; border-radius: 25px;" alt="">
+                  @else
+                    <img src="{{ asset('assets/image/' . auth()->user()->image) }}" style="width: 25px; height: 25px; border-radius: 25px;" alt="">
+                  @endif
+                </a>
+  
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item text-dark" href="">
+                    Profil
+                  </a>
+
+                    <a class="dropdown-item text-dark" href="">
+                      Daftar Transaksi
                     </a>
 
                     <div class="dropdown-divider"></div>

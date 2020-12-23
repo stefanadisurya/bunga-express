@@ -122,42 +122,7 @@
         <div class="container">
             <div class="row">
                 <div class="col d-flex justify-content-between">
-                    <h1 class="font-weight-bold mt-5">Terlaris</h1>
-                    <a href="{{ route('products') }}" class="text-decoration-none">
-                        <p class="h4 hx font-weight-bold">Lihat semua</p>
-                    </a>
-                    
-                </div>
-            </div>
-            
-
-            <div class="container mb-5">
-                <div class="row">
-                    @forelse ($products as $product)
-                        <div class="col-md-3 my-3">
-                            <div class="card card-y showcase-left" style="width: 15rem;">
-                                    <img src="{{ asset('assets/image/' . $product->image) }}" style="height:250px; width: 100%;" class="card-img-top">
-                                    <div class="card-body">
-                                        <h5 class="card-title font-weight-bold text-dark">{{ $product->name }}</h5>
-                                        <div class="row justify-content-start">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-        
-                        @empty
-                            <div class="d-flex justify-content-center my-5">
-                                <p class="h4 text-muted">No item in the store</p>
-                            </div>
-                    @endforelse
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col d-flex justify-content-between">
-                    <h1 class="font-weight-bold mt-5">Populer</h1>
+                    <h1 class="font-weight-bold mt-5">Produk Pilihan</h1>
                     <a href="{{ route('products') }}" class="text-decoration-none">
                         <p class="h4 hx font-weight-bold">Lihat semua</p>
                     </a>
