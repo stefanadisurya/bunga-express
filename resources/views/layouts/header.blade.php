@@ -74,7 +74,7 @@
               </li> --}}
 
               <li class="nav-item">
-                <a class="nav-link text-light js-scroll-trigger mr-3" href="">
+                <a class="nav-link text-light js-scroll-trigger mr-3" href="{{ route('cart') }}">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
               </li>
@@ -89,11 +89,11 @@
                 </a>
   
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item text-dark" href="">
+                  <a class="dropdown-item text-dark" href="{{ route('profile', auth()->user()->id) }}">
                     Profil
                   </a>
 
-                    <a class="dropdown-item text-dark" href="">
+                    <a class="dropdown-item text-dark" href="{{ route('transactions') }}">
                       Daftar Transaksi
                     </a>
 

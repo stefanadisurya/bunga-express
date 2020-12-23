@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Products — BungaExpress')
+@section('title', 'Produk — BungaExpress')
 
 @section('styles')
     <style>
@@ -71,7 +71,7 @@
 </div>
 
 <div class="container mt-5">
-    <form method="GET" action=" {{ route('root') }}">
+    <form method="GET" action=" {{ route('home') }}">
         <div class="row">
             <div class="col-md-12 d-flex justify-content-start">
                 <input class="form-control mr-sm-2" type="search" name="search" aria-label="Search" placeholder="Apa bungamu hari ini?">
@@ -85,7 +85,7 @@
     <div class="row justify-content-center">
         @forelse ($products as $product)
             <div class="col-md-3 my-3">
-                <a href="{{ route('login') }}" class="text-decoration-none">
+                <a href="/member/products/{{ $product->id }}" class="text-decoration-none">
                 <div class="card card-y mt-5 showcase-left" style="width: 15rem;">
                         <img src="{{ asset('assets/image/' . $product->image) }}" style="height:250px; width: 100%;" class="card-img-top">
                         <div class="card-body">

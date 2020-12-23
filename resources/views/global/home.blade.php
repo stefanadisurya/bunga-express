@@ -43,6 +43,15 @@
             margin-top: 60px;
         }
 
+        img {
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+        }
+
         .card-x img {
             width: 160px;
             height: 160px;
@@ -130,7 +139,7 @@
         <div class="row">
             <div class="col d-flex justify-content-between">
                 <h1 class="font-weight-bold mt-5">Produk Pilihan</h1>
-                <a href="{{ route('products') }}" class="text-decoration-none">
+                <a href="{{ route('memberproducts') }}" class="text-decoration-none">
                     <p class="h4 hx font-weight-bold">Lihat semua</p>
                 </a>
                 
@@ -142,14 +151,7 @@
             <div class="row">
                 @forelse ($products as $product)
                     <div class="col-md-3 my-3">
-                        <div class="card card-y showcase-left" style="width: 15rem;">
-                                <img src="{{ asset('assets/image/' . $product->image) }}" style="height:250px; width: 100%;" class="card-img-top">
-                                <div class="card-body">
-                                    <h5 class="card-title font-weight-bold text-dark">{{ $product->name }}</h5>
-                                    <div class="row justify-content-start">
-                                </div>
-                            </div>
-                        </div>
+                        <img src="{{ asset('assets/image/' . $product->image) }}" style="height:250px; width: 100%;" class="card-img-top">       
                     </div>
     
                     @empty

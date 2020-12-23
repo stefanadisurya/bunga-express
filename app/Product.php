@@ -15,11 +15,11 @@ class Product extends Model
         'name', 'price', 'user_id', 'description', 'image'
     ];
 
-    // public function carts() {
-    //     return $this->hasMany(Cart::class);
-    // }
+    public function carts() {
+        return $this->hasMany(Cart::class);
+    }
 
-    // public function detailTransactions() {
-    //     return $this->hasMany(DetailTransaction::class);
-    // }
+    public function detailTransactions() {
+        return $this->hasMany(DetailTransaction::class);
+    }
 }
