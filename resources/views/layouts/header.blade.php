@@ -122,8 +122,8 @@
                 </a>
   
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item text-dark" href="">
-                    Profil
+                  <a class="dropdown-item text-dark" href="{{ route('myproducts') }}">
+                    Produk Saya
                   </a>
 
                     <a class="dropdown-item text-dark" href="">

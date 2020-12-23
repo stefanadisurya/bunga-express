@@ -22,7 +22,13 @@ Route::group(['middleware' => ['auth', 'roles:seller,member']], function () {
     // Route::get('/transactions/{header}', 'GlobalController@detailTransaction')->name('detailTransaction');
 });
 
+Route::group(['middleware' => ['auth', 'roles:seller']], function () {
+    Route::get('/seller/products', 'SellerController@index')->name('myproducts');
+    Route::get('/seller/add', 'SellerController@add')->name('addproduct');
+    Route::post('/seller/add', 'SellerController@store');
+    Route::get('/product/{product}', 'SellerController@show')->name('showmyproduct');
+    Route::delete('/product/{product}', 'SellerController@destroy');
+});
+
 Route::get('/', 'GuestController@home')->name('root')->middleware('guest');
 Route::get('/products', 'GuestController@products')->name('products')->middleware('guest');
-
-// Route::get('/home', 'HomeController@index')->name('home');

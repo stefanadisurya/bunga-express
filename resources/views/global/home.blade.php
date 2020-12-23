@@ -49,6 +49,12 @@
             border-radius: 5px;
         }
 
+        .btn-large {
+            width: 250px;
+            padding: 10px;
+            box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+        }
+
         hr {
             border-color: #000000;
             width: 100px;
@@ -169,7 +175,7 @@
 
 <div class="container">
     <div class="card card-y my-5">
-        <div class="card-header font-weight-bold">Bisnis Saya</div>
+        <div class="card-header h5 font-weight-bold">Bisnis Saya</div>
         <div class="card-body text-dark">
             <div class="row">
                 <div class="col-lg-6 text-center my-3">
@@ -188,27 +194,41 @@
 
 <div class="container">
     <div class="card card-y my-5">
-        <div class="card-header font-weight-bold">Produk Saya</div>
+        <div class="card-header h5 font-weight-bold">Produk Saya</div>
         <div class="card-body text-dark">
             <div class="row">
                 @foreach ($myproducts as $myproduct)
                 <div class="col-lg-3 my-3">
-                    {{-- <h5 class="card-title text-primary font-weight-bold">{{ $productcount }}</h5>
-                    <p class="card-text text-muted">Produk Tersedia</p> --}}
-                    <div class="card card-y" style="width: 15rem;">
-                        <img src="{{ asset('assets/image/' . $myproduct->image) }}" style="height:250px; width: 100%;" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title font-weight-bold text-dark">{{ $myproduct->name }}</h5>
-                            <div class="row justify-content-start">
+                    <a href="" class="text-decoration-none">
+                        <div class="card" style="width: 15rem;">
+                            <img src="{{ asset('assets/image/' . $myproduct->image) }}" style="height:250px; width: 100%;" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title font-weight-bold text-dark">{{ $myproduct->name }}</h5>
+                                <div class="row justify-content-start">
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 </div>
                 @endforeach
             </div>
+
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-3 d-flex justify-content-center mt-5 mb-3">
+                    <a href="{{ route('addproduct') }}" class="btn btn-dark btn-large btn-lg">Tambah Produk Baru</a>
+                </div>
+
+                <div class="col-md-3 d-flex justify-content-center mt-5 mb-3">
+                    <a href="{{ route('myproducts') }}" class="btn btn-primary btn-large btn-lg">Lihat Semua</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+@for ($i = 0; $i < 5; $i++)
+    <br>
+@endfor
 @endif
     
 @endsection
