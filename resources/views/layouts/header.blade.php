@@ -14,78 +14,46 @@
       <ul class="navbar-nav ml-auto">
         @guest
             <li class="nav-item">
-                <a class="nav-link text-light js-scroll-trigger mr-3" href="{{ route('login') }}">
+                <a class="nav-link text-white js-scroll-trigger mr-3" href="{{ route('login') }}">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
             </li>
 
             @if (Route::has('register'))
                 <li class="nav-item">
-                    <a class="nav-link text-light js-scroll-trigger mr-3 ml-3" href="{{ route('register') }}">{{ __('Daftar') }}</a>
+                    <a class="nav-link text-white js-scroll-trigger mr-3 ml-3" href="{{ route('register') }}">{{ __('Daftar') }}</a>
                 </li>
             @endif
 
             <li class="nav-item">
-                <a class="nav-link text-light js-scroll-trigger mr-3 ml-3" href="{{ route('login') }}">
+                <a class="nav-link text-white js-scroll-trigger mr-3 ml-3" href="{{ route('login') }}">
                     <i class="fas fa-sign-in-alt mr-2"></i>
                     {{ __('Masuk') }}
                 </a>
             </li>
             
         @else
-            {{-- Jika admin yang mengakses halaman --}}
-            @if(auth()->user()->role=="admin")
+            @if(auth()->user()->role=="member")
               <li class="nav-item">
-                <a class="nav-link text-light js-scroll-trigger mr-3" href="">View All Transaction</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link text-light js-scroll-trigger mr-3" href="">View All User</a>
-                  </li>
-  
-              <li class="nav-item dropdown">
-                  <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    @if(auth()->user()->image == null)
-                      <img src="{{ asset('assets/image/default.jpg') }}" style="width: 25px; height: 25px; border-radius: 25px;" alt="">
-                    @else
-                      <img src="{{ asset('assets/image/' . auth()->user()->image) }}" style="width: 25px; height: 25px; border-radius: 25px;" alt="">
-                    @endif
-                  </a>
-  
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                      
-                    
-                      <a class="dropdown-item text-danger" href="{{ route('logout') }}"
-                      onclick="event.preventDefault();
-                      document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                      </a>
-  
-                      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                      </form>
-                  </div>
-              </li>
-  
-            {{-- Jika guest yang mengakses halaman --}}
-            @elseif(auth()->user()->role=="member")
-              {{-- <li class="nav-item">
-              <a class="nav-link text-light js-scroll-trigger mr-3" href="{{ route('home') }}">Home</a>
-              </li> --}}
-
-              <li class="nav-item">
-                <a class="nav-link text-light js-scroll-trigger mr-3" href="{{ route('cart') }}">
+                <a class="nav-link text-white js-scroll-trigger mr-3" href="{{ route('cart') }}">
                     <i class="fas fa-shopping-cart"></i>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-white js-scroll-trigger mr-3 ml-3" href="{{ route('memberproducts') }}">
+                    Daftar Produk
                 </a>
               </li>
   
               <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle text-light ml-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white ml-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                   @if(auth()->user()->image == null)
-                    <img src="{{ asset('assets/image/default.jpg') }}" style="width: 25px; height: 25px; border-radius: 25px;" alt="">
+                    <img src="{{ asset('assets/image/default.jpg') }}" class="mr-2" style="width: 25px; height: 25px; border-radius: 25px;" alt="">
                   @else
-                    <img src="{{ asset('assets/image/' . auth()->user()->image) }}" style="width: 25px; height: 25px; border-radius: 25px;" alt="">
+                    <img src="{{ asset('assets/image/' . auth()->user()->image) }}" class="mr-2" style="width: 25px; height: 25px; border-radius: 25px;" alt="">
                   @endif
+                  {{ Auth::user()->username }}
                 </a>
   
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -113,22 +81,19 @@
             
               @elseif(auth()->user()->role=="seller")
               <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle text-light ml-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white ml-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                   @if(auth()->user()->image == null)
-                    <img src="{{ asset('assets/image/default.jpg') }}" style="width: 25px; height: 25px; border-radius: 25px;" alt="">
+                    <img src="{{ asset('assets/image/default.jpg') }}" class="mr-2" style="width: 25px; height: 25px; border-radius: 25px;" alt="">
                   @else
-                    <img src="{{ asset('assets/image/' . auth()->user()->image) }}" style="width: 25px; height: 25px; border-radius: 25px;" alt="">
+                    <img src="{{ asset('assets/image/' . auth()->user()->image) }}" class="mr-2" style="width: 25px; height: 25px; border-radius: 25px;" alt="">
                   @endif
+                  {{ Auth::user()->username }}
                 </a>
   
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item text-dark" href="{{ route('myproducts') }}">
                     Produk Saya
                   </a>
-
-                    <a class="dropdown-item text-dark" href="">
-                      Daftar Transaksi
-                    </a>
 
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="{{ route('logout') }}"

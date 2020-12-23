@@ -26,7 +26,7 @@
         }
 
         .navbar-nav .nav-item:not(:last-child) {
-          border-right: 0.1px solid rgb(77, 77, 77);
+          border-right: 0.1px solid rgb(83, 83, 83);
         }
 
         .navbar {

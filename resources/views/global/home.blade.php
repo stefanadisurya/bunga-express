@@ -43,7 +43,7 @@
             margin-top: 60px;
         }
 
-        img {
+        .img2 {
             -webkit-border-radius: 10px;
             -moz-border-radius: 10px;
             border-radius: 10px;
@@ -151,12 +151,12 @@
             <div class="row">
                 @forelse ($products as $product)
                     <div class="col-md-3 my-3">
-                        <img src="{{ asset('assets/image/' . $product->image) }}" style="height:250px; width: 100%;" class="card-img-top">       
+                        <img src="{{ asset('assets/image/' . $product->image) }}" style="height:250px; width: 100%;" class="card-img-top img2">       
                     </div>
     
                     @empty
                         <div class="d-flex justify-content-center my-5">
-                            <p class="h4 text-muted">No item in the store</p>
+                            <p class="h4 text-muted">Tidak ada produk</p>
                         </div>
                 @endforelse
             </div>
@@ -182,7 +182,7 @@
             <div class="row">
                 <div class="col-lg-6 text-center my-3">
                     <h5 class="card-title text-primary font-weight-bold">{{ $productcount }}</h5>
-                    <p class="card-text text-muted">Produk Tersedia</p>
+                    <p class="card-text text-muted">Jenis Produk Tersedia</p>
                 </div>
 
                 <div class="col-lg-6 text-center my-3">

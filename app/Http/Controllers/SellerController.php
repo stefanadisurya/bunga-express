@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DetailTransaction;
 use App\Product;
 use Illuminate\Http\Request;
 

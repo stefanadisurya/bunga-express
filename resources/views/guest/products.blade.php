@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Products — BungaExpress')
+@section('title', 'Produk — BungaExpress')
 
 @section('styles')
     <style>
