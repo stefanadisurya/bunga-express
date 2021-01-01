@@ -15,6 +15,17 @@
     .disabled {
         opacity: 70%;
     }
+
+    .card .btn {
+        border-radius: 10px;
+        -webkit-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+        cursor: pointer;
+        color: #fff;
+        font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+    }
 </style>
 @endsection
 
@@ -125,7 +136,7 @@
                     </div>
                     
                     <div class="p-t-15 d-flex justify-content-center">
-                        <button class="btn btn--radius-2 bg-dark" type="submit">Save</button>
+                        <button class="btn bg-dark" type="submit">Simpan</button>
                     </div>
                 </form>
 

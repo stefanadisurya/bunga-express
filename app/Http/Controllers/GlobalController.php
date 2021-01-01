@@ -21,6 +21,10 @@ class GlobalController extends Controller
         return view('global.transactions', ['transactions' => $transactions]);
     }
 
+    public function about() {
+        return view('global.about');
+    }
+
     public function detailTransaction(HeaderTransaction $header) {
         $transactions = DetailTransaction::withTrashed()->where('header_id', $header->id)->get();
         return view('global.transactiondetails', ['transactions' => $transactions]);

@@ -8,14 +8,15 @@
             font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
         }
 
-        .btn1 {
-            background-color: #000000;
-            color: #ffffff;
+        .card .btn {
             border-radius: 10px;
-        }
-
-        .btn1:hover {
-            color: #ffffff;
+            -webkit-transition: all 0.4s ease;
+            -o-transition: all 0.4s ease;
+            -moz-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            color: #fff;
+            font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
         }
 
         .card-x {
@@ -201,7 +202,7 @@
             <div class="row">
                 @foreach ($myproducts as $myproduct)
                 <div class="col-lg-3 my-3">
-                    <a href="" class="text-decoration-none">
+                    <a href="/product/{{ $myproduct->id }}" class="text-decoration-none">
                         <div class="card" style="width: 15rem;">
                             <img src="{{ asset('assets/image/' . $myproduct->image) }}" style="height:250px; width: 100%;" class="card-img-top">
                             <div class="card-body">

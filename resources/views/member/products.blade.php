@@ -9,7 +9,7 @@
         }
 
         .jumbotron {
-            background-image: url('assets/image/mainheader2.png');
+            background-image: url('../assets/image/mainheader5.png');
             background-repeat: no-repeat;
             background-position: center;
             background-size: 100%;
@@ -41,6 +41,17 @@
             box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
         }
 
+        .btn {
+            border-radius: 10px;
+            -webkit-transition: all 0.4s ease;
+            -o-transition: all 0.4s ease;
+            -moz-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            color: #fff;
+            font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+        }
+
         .card img {
             width: 160px;
             height: 160px;
@@ -51,22 +62,8 @@
 
 @section('content')
 <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h1 class="display-4 text-white text-center"></h1>
-    </div>
-</div>
-
-<div class="container">
-    <div class="card card-x">
-        <div class="card-body">
-        <div class="row d-flex justify-content-center">
-                <div class="col-lg-4 d-flex justify-content-center">
-                    <p class="h2 font-weight-bold">Daftar Bunga</p>
-                </div>
-                
-            </div>
-        </div>
-        </div>
+    <div>
+        <p style="font-size: 100px;" class="font-weight-bold text-center text-light">Produk Kami</p>
     </div>
 </div>
 

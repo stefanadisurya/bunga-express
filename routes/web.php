@@ -46,3 +46,5 @@ Route::group(['middleware' => ['auth', 'roles:member']], function () {
 
 Route::get('/', 'GuestController@home')->name('root')->middleware('guest');
 Route::get('/products', 'GuestController@products')->name('products')->middleware('guest');
+
+Route::get('/about', 'GlobalController@about')->name('about');

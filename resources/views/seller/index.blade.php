@@ -8,15 +8,16 @@
             font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
         }
 
-        .btn1 {
-            background-color: #000000;
-            color: #ffffff;
-            border-radius: 10px;
-        }
-
-        .btn1:hover {
-            color: #ffffff;
-        }
+        .btn {
+        border-radius: 10px;
+        -webkit-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+        cursor: pointer;
+        color: #fff;
+        font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+    }
 
         .card-x {
             margin-top: -70px;

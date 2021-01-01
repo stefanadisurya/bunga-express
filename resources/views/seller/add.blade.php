@@ -8,11 +8,16 @@
             font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
         }
 
-        .btn1 {
-            background-color: #000000;
-            color: #ffffff;
-            border-radius: 10px;
-        }
+        .card .btn {
+        border-radius: 10px;
+        -webkit-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+        cursor: pointer;
+        color: #fff;
+        font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+    }
 
         .btn1:hover {
             color: #ffffff;
@@ -109,7 +114,7 @@
     
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-left my-4">
-                                    <button type="submit" class="btn btn1">
+                                    <button type="submit" class="btn btn-dark">
                                         Tambah Produk
                                     </button>
                                 </div>

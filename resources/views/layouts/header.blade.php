@@ -1,10 +1,10 @@
 <div class="collapse navbar-collapse d-inline-block" id="navbarNav">
     @guest
       {{-- Jika guest yang mengakses halaman --}}
-      <a class="navbar-brand text-light" href="{{ route('root') }}">BungaExpress</a>
+      <a class="navbar-brand text-light" href="{{ route('root') }}">KMG BungaExpress</a>
     @else
       {{-- Jika admin dan member yang mengakses halaman --}}
-      <a class="navbar-brand text-light" href="{{ route('home') }}">BungaExpress</a>
+      <a class="navbar-brand text-light" href="{{ route('home') }}">KMG BungaExpress</a>
     @endguest
     
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,6 +17,12 @@
                 <a class="nav-link text-white js-scroll-trigger mr-3" href="{{ route('login') }}">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-white js-scroll-trigger mr-3 ml-3" href="{{ route('about') }}">
+                  Tentang Kami
+              </a>
             </li>
 
             @if (Route::has('register'))
@@ -43,6 +49,12 @@
               <li class="nav-item">
                 <a class="nav-link text-white js-scroll-trigger mr-3 ml-3" href="{{ route('memberproducts') }}">
                     Daftar Produk
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-white js-scroll-trigger mr-3 ml-3" href="{{ route('about') }}">
+                    Tentang Kami
                 </a>
               </li>
   

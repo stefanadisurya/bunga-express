@@ -18,9 +18,7 @@
             box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
         }
 
-        .btn1, .card .btn1 {
-            background-color: #000000;
-            color: #ffffff;
+        .card .btn, .btn {
             border-radius: 10px;
             -webkit-transition: all 0.4s ease;
             -o-transition: all 0.4s ease;

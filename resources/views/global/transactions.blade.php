@@ -21,8 +21,15 @@
             box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
         }
 
-        .btn1:hover {
-            color: #ffffff;
+        .btn {
+            border-radius: 10px;
+            -webkit-transition: all 0.4s ease;
+            -o-transition: all 0.4s ease;
+            -moz-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            color: #fff;
+            font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
         }
     </style>
 @endsection
