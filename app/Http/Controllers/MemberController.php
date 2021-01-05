@@ -47,6 +47,13 @@ class MemberController extends Controller
             $request->image->storeAs('image', $filename, 'public');
             Alert::toast('Edit profil berhasil', 'success');
         } else {
+            User::where('id', $user->id)->update([
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'address' => $request->address,
+                'phone_number' => $request->phone_number
+            ]);
+
             Alert::toast('Edit profil berhasil', 'success');
         }
 
