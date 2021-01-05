@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('123456'),
                 'address' => 'Jalan Gajahmada, nomor 1',
                 'phone_number' => '0218465780',
-                'gender' => 'Male',
+                'gender' => 'Pria',
                 'image' => 'default.jpg',
                 'remember_token' => Str::random(50)
             ],
@@ -36,7 +36,7 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('123456'),
                 'address' => 'Jalan Adipatiukur, nomor 5, Jakarta Selatan',
                 'phone_number' => '08587124709',
-                'gender' => 'Female',
+                'gender' => 'Wanita',
                 'image' => 'default.jpg',
                 'remember_token' => Str::random(50)
             ],
@@ -49,7 +49,7 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('123456'),
                 'address' => 'Jalan Anggrek, no. 2',
                 'phone_number' => '081725192242',
-                'gender' => 'Male',
+                'gender' => 'Pria',
                 'image' => 'user2.jpg',
                 'remember_token' => Str::random(50)
             ],
@@ -62,7 +62,7 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('123456'),
                 'address' => 'Jalan Z, no. 10',
                 'phone_number' => '0218459078',
-                'gender' => 'Male',
+                'gender' => 'Pria',
                 'image' => 'user4.jpg',
                 'remember_token' => Str::random(50)
             ],
@@ -75,7 +75,7 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('123456'),
                 'address' => 'Perum. Gading Asri, no. 10',
                 'phone_number' => '089847685970',
-                'gender' => 'Female',
+                'gender' => 'Wanita',
                 'image' => 'user3.jpg',
                 'remember_token' => Str::random(50)
             ],
