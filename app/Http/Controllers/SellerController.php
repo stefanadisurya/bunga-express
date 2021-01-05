@@ -38,7 +38,7 @@ class SellerController extends Controller
 
         $request->image->storeAs('image', $filename, 'public');
 
-        Alert::success('Tambah Produk Baru Berhasil!', 'Produk baru ditambahkan');
+        Alert::success('Tambah Produk Berhasil!', 'Produk berhasil ditambahkan');
 
         return redirect()->route('home');
     }
