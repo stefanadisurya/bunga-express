@@ -20,6 +20,12 @@
             </li>
 
             <li class="nav-item">
+              <a class="nav-link text-white js-scroll-trigger mr-3 ml-3" href="{{ route('products') }}">
+                  Daftar Produk
+              </a>
+            </li>
+
+            <li class="nav-item">
               <a class="nav-link text-white js-scroll-trigger mr-3 ml-3" href="{{ route('about') }}">
                   Tentang Kami
               </a>

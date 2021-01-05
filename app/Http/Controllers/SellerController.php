@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DetailTransaction;
 use App\Product;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SellerController extends Controller
 {
@@ -37,6 +38,8 @@ class SellerController extends Controller
 
         $request->image->storeAs('image', $filename, 'public');
 
+        Alert::success('Tambah Produk Baru Berhasil!', 'Produk baru ditambahkan');
+
         return redirect()->route('home');
     }
 
@@ -46,6 +49,8 @@ class SellerController extends Controller
 
     public function destroy(Product $product) {
         Product::destroy($product->id);
+
+        Alert::success('Hapus Produk Berhasil!', 'Produk telah dihapus');
 
         return redirect()->route('home');
     }

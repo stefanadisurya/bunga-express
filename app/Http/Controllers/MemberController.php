@@ -8,6 +8,7 @@ use App\HeaderTransaction;
 use App\Product;
 use App\User;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class MemberController extends Controller
 {
@@ -44,9 +45,9 @@ class MemberController extends Controller
             ]);
 
             $request->image->storeAs('image', $filename, 'public');
-            // Alert::toast('Profile updated', 'success');
+            Alert::toast('Edit profil berhasil', 'success');
         } else {
-            // Alert::toast('Profile updated', 'success');
+            Alert::toast('Edit profil berhasil', 'success');
         }
 
         return redirect()->route('profile', ['user' => $user]);
@@ -54,7 +55,7 @@ class MemberController extends Controller
 
     public function deleteAccount(User $user) {
         User::destroy($user->id);
-        // Alert::success('Remove Account Success!', 'Your account has been removed');
+        Alert::success('Hapus Akun Berhasil!', 'Akun Anda telah dihapus');
 
         return redirect()->route('root');
     }
@@ -81,6 +82,8 @@ class MemberController extends Controller
             ]);
         }
 
+        Alert::toast('Produk ditambahkan ke keranjang', 'success');
+
         return redirect()->route('memberproducts', $product);
     }
 
@@ -101,11 +104,14 @@ class MemberController extends Controller
             'quantity' => $request->quantity
         ]);
 
+        Alert::toast('Jumlah produk di-update', 'success');
+
         return redirect()->route('cart');
     }
 
     public function remove(Cart $cart) {
         Cart::destroy($cart->id);
+        Alert::toast('Produk dihapus dari keranjang', 'success');
 
         return redirect()->route('cart');
     }
@@ -129,6 +135,8 @@ class MemberController extends Controller
         }
 
         Cart::where('user_id', $user->id)->delete();
+
+        Alert::success('Checkout Berhasil!', 'Terima kasih telah bertransaksi di KMG BungaExpress');
 
         return redirect()->route('home');
     }
