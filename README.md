@@ -3,5 +3,5 @@
 ## KMG BungaExpress
 
 A marketplace to sell & buy flowers. Made with Laravel 7. Developed by:
-- Stefan Adisurya (stefanadisurya)
-- Brellian Jordi (jordi101ok)
+- [Stefan Adisurya](https://github.com/stefanadisurya)
+- [Brellian Jordi](https://github.com/jordi101ok)
